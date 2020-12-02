@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='author' content='Ethaniel Botello'>
+    <meta name='description' content=''>
+    <meta property='og:image' content=''>
+    <meta property='og:title' content=''>
+    <meta property='og:description' content=''>
+    <title>Skeletal System Game</title>
+    <link rel='shortcut icon' href='' type='image/x-icon'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+
+<body>
+    <header>
+        <h1 class="header">Skeletal Game</h1>
+    </header>
+    <section>
+        <div class="rules">
+            <div class="gr">
+            <h3 class="gamerules">Game Rules</h3>
+            </div>
+            <ul>
+                <b>
+                    <li class="rule">- You will be given a hint and both players must guess the correct word as fast as
+                        possible</li>
+                    <li class="rule">- The first person who guessed the correct word earns one point</li>
+                    <li class="rule">- if neither of the players guesses correctly none of them earn a point and they
+                        press "NEXT QUESTION"</li>
+                    <li class="rule">- When the game ends the person with the highest score wins</li>
+                </b>
+            </ul>
+        </div>
+        <div class="trackers">
+            <h4 class="score player1" id="player1">Player 1: 0pts</h4>
+            <h4 class="score player2" id="player2">Player 2: 0pts</h4>
+            <h3 class="hint" id="hint">Hint: Anim dolore nostrud dolor eiusmod sint aliqua q</h3>
+            <!-- "CW" stands for "correct word" ;) -->
+            <p class="word" id="CW">Correct Word:</p>
+        </div>
+        <div class="buttons">
+            <button class="button players" id="P1">P1 Point</button><button class="button players" id="P2">P2 Point</button>
+            <button class="button nq" id="button">NEXT QUESTION</button>
+        </div>
+    </section>
+</body>
+<script src="script.js"></script>
+
+</html>
