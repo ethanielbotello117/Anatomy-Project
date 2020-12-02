@@ -7,27 +7,40 @@ let points2 = 0;
 // turn counter UwU
 let turn = 0;
 
+
 function player1Point() {
+    if(turn >= 1){
     points1++
     console.log(`player ones points: ${points1}`)
     document.getElementById("player1").innerHTML = `Player 1: ${points1}pts`
+    }
+
 }
 
 function player2point() {
+    if(turn >= 1){
     points2++
     console.log(`player twos points: ${points2}`)
-    document.getElementById("player2").innerHTML = `Player 2: ${points2}pts`
+    document.getElementById("player2").innerHTML = `Player 2: ${points2}pts`    
+    }
+
 }
 
 function nextQuestion() {
     turn++
+    if(turn == 1){
+        document.getElementById("nextQuestion").innerHTML = "NEXT QUESTION"
+        document.getElementById("player1").innerHTML = "Player 1: 0Pts"
+        document.getElementById("player2").innerHTML = "Player 2: 0Pts"
+    }
     console.log(`amount of turns: ${turn}`);
-    document.getElementById("CW").innerHTML = "Correct Word:"
-    setTimeout(questions, 5000)
-    // questions();
-    hints();
-    if (turn == 24){
-    // Winner selector 88w88
+
+    if(turn == 23){
+        document.getElementById("nextQuestion").innerHTML = "DECLARE WINNER"
+    }
+
+    if(turn == 24){
+        document.getElementById("nextQuestion").innerHTML = "RESET GAME?"
         if (points1 > points2) {
             alert("PLAYER 1 WINS!!!")
         } else if (points1 < points2) {
@@ -37,10 +50,22 @@ function nextQuestion() {
         }
         turn = 0;
         points1 = 0;
-        document.getElementById("player1").innerHTML = `Player 1: ${points1}pts`
         points2 = 0;
-        document.getElementById("player2").innerHTML = `Player 2: ${points2}pts`
+        document.getElementById("player1").innerHTML = "Press Start Game"
+        document.getElementById("player2").innerHTML = "to Begin!"
     }
+
+    document.getElementById("CW").innerHTML = "Correct Word:"
+    if(turn > 0){
+        setTimeout(questions, 5000);
+    }
+    if(turn == 0){
+        document.getElementById("nextQuestion").innerHTML = "START GAME?"
+        document.getElementById("hint").innerHTML = "Hint:"
+        document.getElementById("CW").innerHTML = "Correct Word:"
+
+    }
+    hints();
 }
 
 
@@ -398,8 +423,8 @@ let hint21b = `Hint: In the back`;
 let hint22a = `Hint: In the fingers`;
 let hint22b = `Hint: In the fingers`;
 
-let hint23a = `Hint: Ryhmes with "Carpool" I basically gave you the answer you better get this right`;
-let hint23b = `Hint: `;
+let hint23a = `Hint: Ryhmes with "Carpool"`;
+let hint23b = `Hint: Ryhmes with "Carpool"`;
 
 
 // answers X3
